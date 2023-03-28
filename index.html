@@ -6,14 +6,84 @@
     <meta name="description" content="JS bot for Pokémon Planet!">
     <meta name="keywords" content="Pokémon, Planet, Bot, Script, Macro, Hack, Online, Game">
     <title>PPOHuntail</title>
-    <style>
-      .logo{
-        height=44%,
-        width=75%
-      }
-    </style>
   </head>  
-  <body>
-    <image class="logo" src="https://github.com/ppohuntail/ppohuntail.github.io/blob/main/image.png?raw=true"></image>
+  <body style="font-family:'Trebuchet MS'">
+    <image height="75%" width="44%" src="https://github.com/ppohuntail/ppohuntail.github.io/blob/main/image.png?raw=true"></image>
+    <h1>What is this?</h1>
+    <p>PPOHuntail is a bot for the popular MMO Pokémon Planet. I'm assuming you already know this, but a large part of the game revolves around grinding, allowing you to obtain cash, Pokémon, and items. This bot makes this process easier by doing so automatically.</p>
+    <h1>How does it work?</h1>
+    <p>When the bot is activated, it begins rapidly sending steps to the server. When it receives an encounter, it responds with the appropriate move request. To the player, it looks like you are standing still, but in reality you are getting encounters way faster than normal.</p>
+    <p>This may sound complicated, so here is an example. I want to look for Heatran in Stark Mountain Volcano. I tell the bot: if I encounter a Heatran, Volcarona, or Hydreigon, ping me on Discord. If I encounter a Golbat, use Psychic. If I encounter a Golem, use Grass Knot. If I encoutner a Magcargo, use HP Ground. If I encounter an elite, use Teleport. Start the bot and tada, I am now hunting for Heatran + earning exp and money without even touching the keyboard!</p>
+    <h1>How is this better than other bots?</h1>
+    <p>Most bots for this game are macros: they basically say, "press left and right until I detect that an encounter shows up, then press 1 twice." This is clunky for 3 reasons:</p>
+    <ol>
+      <li>This requires the bot to use image recognition to figure out what mon it has encountered, etc. which is usually quite slow</li>
+      <li>The bot has to wait for the game's animations</li>
+      <li>The bot can be obvious to other players/admins, making a ban more likely</li>
+    </ol>
+    <p>Additionally, to take control of your keyboard, these bots have to be distributed as .exe files with a lot of access. Long story short, it is incredibly easy for them to give you malware, mine crypto, and lots of other scummy things. Also, many of them ask you for your password: this is a scam designed to steal your account.</p>
+    <p>Instead, Huntail is run by clicking a bookmark. Yes, you heard that right. It runs completely within the browser, which means:</p>
+    <ul>
+      <li>You can use it on Windows, Mac, Linux, Chromebooks, and even mobile devices</li>
+      <li>It communicates directly with the server, so it doesn't have to wait for animations when getting encounters</li>
+      <li>It appears to be standing still to other players, making it hard to detect</li>
+      <li>It doesn't ask you for your password or any personal information</li>
+      <li>It's completely free</li>
+      <li>It updates automatically, so new features (like fishing, etc. - mining is actually less efficient than grinding because of how fast the bot can get encounters) may be available in the future</li>
+    </ul>
+    <h1>Ok, well just how fast is it?</h1>
+    <p>Stats coming soon</p>
+    <h1>This sounds too good to be true. What's in it for you?</h1>
+    <p>Good question. Pretty much every bot out there has something to gain, be it your password, items, or IRL money. I've already gotten a lot of use out of this bot and other scripts that I haven't released yet ;) and I like causing a little chaos, so I figured I would make it public. Also, the more new players, the better, and one of the main things that kills motivation for this game is the amount of time it demands. This bot makes the game playable for people who don't spend 16 hours in their basement everyday.</p>
+    <h1>I'm sold. How can I get it?</h1>
+    <b>(if you don't like reading, you can watch a YouTube tutorial <a href="javascript:void(0)">here</a>)</b>
+    <h3>For non-mobile devices:</h3>
+    <ol>
+      <li>If it's not visible already, show your bookmarks bar. This is done by clicking on the 3 dots/lines in the top right conrer of your browser, then going to Bookmarks, then clicking Show bookmarks bar (or similar). If you're using some weird browser or you're having trouble with this, just Google it.</li><br>
+      <li><strong>Optional:</strong> if you want the bot to ping you on Discord when it finds something, you can create a Webhook. You can find out how to do this <a href="https://support.discord.com/hc/en-us/articles/228383668-Intro-to-Webhooks">here</a><br>Then, select Copy Webhook URL and paste it here: <textarea rows="1" cols="100"></textarea><br>If you haven't already, go to Settings -> Advanced and toggle Developer Mode. Then right click on your username in any server and select Copy ID. Paste it here: <textarea rows="1" cols="20"></textarea><br><br><b>If you want to skip the step above, leave the text fields blank.</b></li><br>
+      <li>Finally, click and drag the following link into your bookmarks bar: <a id="bot" href="javascript:(()=>{discord=['',''];fetch('https://raw.githubusercontent.com/ppohuntail/ppohuntail.github.io/main/huntail.js').then(e=>e.text()).then(e=>eval(e))})()">Huntail</a></li>
+    </ol>
+    <h3>For mobile devices:</h3>
+    This will cover instructions for iOS Safari, as I don't have an Android to test on. However, another option is to do the steps above on a non-mobile device, then use the Google Chrome app on your phone (the bookmarks will sync if you're logged into the same Google account on both devices)
+    <ol>
+      <li>Click <button onclick="f()">this button</button> (if you want to set up Discord pings, read the instructions above and fill in the text fields before clicking this button)</li>
+      <li>Bookmark any page (like this one!). This is done by tapping the Share icon (the box with the arrow coming out of it), then scrolling down to Add Bookmark, and tapping it.</li>
+      <li>Choose a name for your bookmark (ie. Huntail), then create it.</li>
+      <li>Tap on the book icon, then select Edit (in the bottom right corner). Now tap on your new bookmark.</li>
+      <li>Delete the current url of your bookmark. Then tap the field and select paste. Finally, select Done.</li>
+    </ol><br>
+    <p>If you have followed these steps, you should now have a new bookmark. To use the bot, open the game and click on the bookmark. This will open up a window that allows you to give the bot instructions. It's pretty self explanatory, but here are some obligatory instructions:</p>
+    <ol>
+      <li>To choose which mons you want to hunt, click the Add button. This will prompt you for a Pokémon (make sure to spell it correctly). To remove this mon from the list, click on it.</li>
+      <li>When you have finished adding all of your mons, click the Next button.</li>
+      <li>When the bot encounters a wild Pokémon, it will use the move in your first slot by default (you can change the order of your moves in your mon's summary). If you want it to use a different move vs a certain type of mon, click the Add button. It will prompt you for the mon, and the moveslot (ie. enter Golbat for the first prompt and 2 for the second prompt if you want to use the move in slot 2 against Golbats). If you want to use a move against all elite Pokémon, enter "elite" for the mon along with that moveslot. If you want to remove a pairing from the list, click on it.</li>
+      <li>When you are done, click the Next button.</li>
+      <li>Take one step in any direction. Then, walk backwards one tile (so you end up in the spot that you originally were). If you walk in a different direction, the bot will freeze and you will need to refresh the page.</li>
+      <li>An encounter will appear within a few seconds. Use any move against the wild Pokémon.</li>
+      <li>The bot has been started! Feel free to watch it tear through encounters, or leave it to its own devices. If it encounters a mon that you are hunting, it will ping you on Discord (if you set that up) and wait for you to catch it (or disconnect if you are away for too long, in which case you can catch the mon when you log back in). Refresh the page to stop the bot and collect your spoils.</li>
+      <li>Note: Google Chrome will sometimes throttle the speed of tabs it deems "inactive", which affects the bot's performance. To avoid this, use Firefox or keep the tab focused while you are using the bot.</li>
+    </ol>
+    <h1>Closing thoughts</h1>
+    <ul>
+      <li>This goes without saying, but if this bot becomes popular enough, the devs may find a way to detect people using it and ban them.</li>
+      <li>If this does happen, I will try to find a way to circumvent it. That being said, I am not responsible for any bans that happen as a result of the use of this bot. Also you have no idea who I am so you couldn't yell at me if you tried :)</li>
+      <li>On a similar note, if an update happens that breaks this bot, be patient and I will probably fix it. Again, the bookmark will always run the latest version of the bot, so you don't need to reinstall it.</li>
+      <li>If you are PPO staff and reading this, I would link a Discord here to have a chat, but I don't want the masses of English chat spamming it because they can't follow the instructions. That being said, if you care enough to make an announcement or something then I'll find you. Otherwise, chora mais. If you don't care, then everybody wins I guess.</li>
+      <li>I have no idea how much this project will spread, so in the case that someone tries to impersonate it, just keep your wits about you. It's not like people can give you malware, but they could link to some shock site, so check the bookmark to be safe. People do all sorts of petty things so I'm saying this preemptively.</li>
+      <li>Make sure to share this with your friends! And if they don't play PPO, introduce it to them. The game will only get better the more players there are, and with Kalos releasing SoonTm, now is a great time to start playing.</li>
+      <li>Also make sure you trust your friends. If you go around telling random people that you're using a bot, you may get reported. Gather up the few remnants of common sense scattered among the playerbase and use them.</li>
+      <li>I love Anubisius</li>
+    </ul>
+    <script>
+      var uri = document.getElementById("bot");
+      var discord = ['',''];
+      [...document.body.getElementsByTagName("textarea")].forEach((e,i)=>{
+        e.addEventListener("change",()=>{
+          discord[i] = e.value;
+          uri.href = uri.href.replace(/\[(.*?)\]/, JSON.stringify(discord));
+        });
+      });
+      var f = ()=>navigator.clipboard.writeText(uri.href);
+    </script>
   </body>
 </html>
