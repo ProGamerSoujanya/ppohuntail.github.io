@@ -4,9 +4,9 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
     <meta name="description" content="JS bot for Pokémon Planet!">
-    <meta name="keywords" content="Pokémon, Planet, Huntail, PPO, Bot, Script, Macro, Hack, Online, Game">
-    <meta name="google-site-verification" content="L0a17fLZNx_xDGa1aNkKQqoTfUzEzHc50CYN7gzrJjQ" />
+    <meta name="keywords" content="Pokémon, Planet, Bot, Huntail, PPO, Script, Unity, Macro, Hack, Online, Game">
     <title>PPOHuntail</title>
+    <link rel="icon" href="https://pokemon-planet.com/forums/favicon.ico">
   </head>  
   <body style="font-family:'Trebuchet MS'">
     <image height="75%" width="44%" src="https://github.com/ppohuntail/ppohuntail.github.io/blob/main/image.png?raw=true"></image>
@@ -14,7 +14,7 @@
     <p>PPOHuntail is a bot for the popular MMO Pokémon Planet. I'm assuming you already know this, but a large part of the game revolves around grinding, allowing you to obtain cash, Pokémon, and items. This bot makes this process easier by doing so automatically.</p>
     <h1>How does it work?</h1>
     <p>When the bot is activated, it begins rapidly sending steps to the server. When it receives an encounter, it responds with the appropriate move request. To the player, it looks like you are standing still, but in reality you are getting encounters way faster than normal.</p>
-    <p>This may sound complicated, so here is an example. I want to look for Heatran in Stark Mountain Volcano. I tell the bot: if I encounter a Heatran, Volcarona, or Hydreigon, ping me on Discord. If I encounter a Golbat, use Psychic. If I encounter a Golem, use Grass Knot. If I encoutner a Magcargo, use HP Ground. If I encounter an elite, use Teleport. Start the bot and tada, I am now hunting for Heatran + earning exp and money without even touching the keyboard!</p>
+    <p>This may sound complicated, so here is an example. I want to look for Heatran in Stark Mountain Volcano. I tell the bot: if I encounter a Heatran, Volcarona, or Hydreigon, ping me on Discord. If I encounter a Golbat, use Psychic. If I encounter a Golem, use Grass Knot. If I encounter a Magcargo, use HP Ground. If I encounter an elite, use Teleport. Start the bot and tada, I am now hunting for Heatran + earning exp and money without even touching the keyboard!</p>
     <h1>How is this better than other bots?</h1>
     <p>Most bots for this game are macros: they basically say, "press left and right until I detect that an encounter shows up, then press 1 twice." This is clunky for 3 reasons:</p>
     <ol>
@@ -33,15 +33,16 @@
       <li>It updates automatically, so new features (like fishing, etc. - mining is actually less efficient than grinding because of how fast the bot can get encounters) may be available in the future</li>
     </ul>
     <h1>Ok, well just how fast is it?</h1>
-    <p>Stats coming soon</p>
+    <p>The bot gets encounters at the fastest possible rate that won't get it disconnected from the server. Thus, its speed is somewhat dependent on server speed, and since Unity is unstable right now it can fluctuate <b>(also random disconnects and major server lag can halt its progress, so it may be best to keep an eye on it while it runs with the game in its current state)</b>. That being said, from testing it seems to average 700 encounters per hour without Illuminate; with Illuminate it is theoretically double that, but I haven't tested fully. Also, it does not need a bike/mount/surfboard to run at this speed. To put this into context, it kill grinds without Illuminate at the same speed as endgame players run grinding with Illuminate (so they aren't even making any money), and with Illuminate it is twice as fast. To find how much money it makes, estimate what you get from each kill and multiply by 700 (or 1400 if you have Illuminate); for example, if you make around $300 per kill, you can expect around $420k per hour with Illuminate and no interruptions.</p>
+    <p><b>Note that Google Chrome and similar browsers will throttle the speed if they deem the tab "inactive" so to get around this, use Firefox or keep the browser window focused.</b></p>
     <h1>This sounds too good to be true. What's in it for you?</h1>
     <p>Good question. Pretty much every bot out there has something to gain, be it your password, items, or IRL money. I've already gotten a lot of use out of this bot and other scripts that I haven't released yet ;) and I like causing a little chaos, so I figured I would make it public. Also, the more new players, the better, and one of the main things that kills motivation for this game is the amount of time it demands. This bot makes the game playable for people who don't spend 16 hours in their basement everyday.</p>
     <h1>I'm sold. How can I get it?</h1>
     <b>(if you don't like reading, you can watch a YouTube tutorial <a href="javascript:void(0)">here</a>)</b>
     <h3>For non-mobile devices:</h3>
     <ol>
-      <li>If it's not visible already, show your bookmarks bar. This is done by clicking on the 3 dots/lines in the top right conrer of your browser, then going to Bookmarks, then clicking Show bookmarks bar (or similar). If you're using some weird browser or you're having trouble with this, just Google it.</li><br>
-      <li><strong>Optional:</strong> if you want the bot to ping you on Discord when it finds something, you can create a Webhook. You can find out how to do this <a href="https://support.discord.com/hc/en-us/articles/228383668-Intro-to-Webhooks">here</a><br>Then, select Copy Webhook URL and paste it here: <textarea rows="1" cols="100"></textarea><br>If you haven't already, go to Settings -> Advanced and toggle Developer Mode. Then right click on your username in any server and select Copy ID. Paste it here: <textarea rows="1" cols="20"></textarea><br><br><b>If you want to skip the step above, leave the text fields blank.</b></li><br>
+      <li>If it's not visible already, show your bookmarks bar. This is done by clicking on the 3 dots/lines in the top right corner of your browser, then going to Bookmarks, then clicking Show bookmarks bar (or similar). If you're using some weird browser or you're having trouble with this, just Google it.</li><br>
+      <li><strong>Optional:</strong> if you want the bot to ping you on Discord when it finds something, you can create a Webhook. You can find out how to do this <a href="https://support.discord.com/hc/en-us/articles/228383668-Intro-to-Webhooks">here</a><br>Then, select Copy Webhook URL and paste it here: <textarea rows="1" cols="50"></textarea><br>If you haven't already, go to Settings -> Advanced and toggle Developer Mode. Then right click on your username in any server and select Copy ID. Paste it here: <textarea rows="1" cols="20"></textarea><br><br><b>If you want to skip the step above, leave the text fields blank.</b></li><br>
       <li>Finally, click and drag the following link into your bookmarks bar: <a id="bot" href="javascript:(()=>{discord=['',''];fetch('https://raw.githubusercontent.com/ppohuntail/ppohuntail.github.io/main/huntail.js').then(e=>e.text()).then(e=>eval(e))})()">Huntail</a></li>
     </ol>
     <h3>For mobile devices:</h3>
@@ -53,7 +54,7 @@
       <li>Tap on the book icon, then select Edit (in the bottom right corner). Now tap on your new bookmark.</li>
       <li>Delete the current url of your bookmark. Then tap the field and select paste. Finally, select Done.</li>
     </ol><br>
-    <p>If you have followed these steps, you should now have a new bookmark. To use the bot, open the game and click on the bookmark. This will open up a window that allows you to give the bot instructions. It's pretty self explanatory, but here are some obligatory instructions:</p>
+    <p>If you have followed these steps, you should now have a new bookmark. To use the bot, open the game and click on the bookmark. This will open up a window that allows you to give the bot instructions. It's pretty self explanatory, but here are some obligatory directions:</p>
     <ol>
       <li>To choose which mons you want to hunt, click the Add button. This will prompt you for a Pokémon (make sure to spell it correctly). To remove this mon from the list, click on it.</li>
       <li>When you have finished adding all of your mons, click the Next button.</li>
@@ -62,7 +63,7 @@
       <li>Take one step in any direction. Then, walk backwards one tile (so you end up in the spot that you originally were). If you walk in a different direction, the bot will freeze and you will need to refresh the page.</li>
       <li>An encounter will appear within a few seconds. Use any move against the wild Pokémon.</li>
       <li>The bot has been started! Feel free to watch it tear through encounters, or leave it to its own devices. If it encounters a mon that you are hunting, it will ping you on Discord (if you set that up) and wait for you to catch it (or disconnect if you are away for too long, in which case you can catch the mon when you log back in). Refresh the page to stop the bot and collect your spoils.</li>
-      <li>Note: Google Chrome will sometimes throttle the speed of tabs it deems "inactive", which affects the bot's performance. To avoid this, use Firefox or keep the tab focused while you are using the bot.</li>
+      <li>Reminder: if you are using Google Chrome, Opera GX, etc., keep the browser window focused for maximum efficiency.</li>
     </ol>
     <h1>Closing thoughts</h1>
     <ul>
