@@ -26,27 +26,27 @@ let b = false;
 let r = null;
 let m = '';
 let p = null;
-let n = 0x1;
+let n = 1;
 let y = false;
 
 const f = () => {
   clearTimeout(p);
   s.send(r);
-  n = 0x1;
+  n = 1;
   p = setInterval(() => {
     new Uint8Array(r)[0x34] += n;
-    n = (n > 0x0 ? n + 0x1 : n - 0x1) * -0x1;
+    n = (n > 0 ? n + 1 : n - 1) * -1;
     s.send(r);
-  }, 0x3e8);
+  }, 1000);
 };
 
 const v = document.createElement('div');
-v.style = "position: absolute; right: 0; top: 15%; height: 50%; width: 25%; background-color: rgba(255, 255, 255, 0.7); display: flex; flex-direction: column; font-family: 'Trebuchet MS'; padding: 10px; border: 1px solid #ccc;";
+v.style = "position:absolute;right:0;top:15%;height:50%;width:25%;background-color:rgba(255,255,255,0.7);display:flex;flex-direction:column;font-family:'Trebuchet MS';padding:10px;border:1px solid #ccc;";
 v.innerHTML = `
-  <h2 style="margin: 0;">Mons to hunt</h2>
-  <div style="flex: 1; overflow-y: auto; margin: 10px 0;"></div>
+  <h2 style="margin:0;">Mons to hunt</h2>
+  <div style="flex:1;overflow-y:auto;margin:10px 0;"></div>
   <button onclick="addMon()">Add (click mons to remove)</button>
-  <button style="margin-top: auto;" onclick="nextStep()">Next</button>
+  <button style="margin-top:auto;" onclick="nextStep()">Next</button>
 `;
 
 const addMon = () => {
@@ -63,9 +63,9 @@ const addMon = () => {
 const nextStep = () => {
   const mons = [...v.children[1].children].map(el => el.textContent);
   ["Moves to use", '', "Add (enter 'elite' for all elites)", "Next (default is slot 1)"].forEach((text, i) => v.children[i].innerHTML = text);
-  
+
   const movePrompt = () => prompt("Mon") + " - " + prompt("Move to use (e.g., 1 for move in slot 1)");
-  
+
   const nextMove = () => {
     const moveMapping = Object.fromEntries([...v.children[1].children].map(el => el.textContent.split(" - ").map((text, index) => index ? parseInt(text) || 1 : text)));
     v.innerHTML = "<h2>Take a step</h2>";
@@ -76,15 +76,15 @@ const nextStep = () => {
         const arrayBuffer = new Uint8Array(fileReader.result);
         const text = String.fromCharCode(...arrayBuffer);
         const details = (text.split("\b\0") ?? []).map(item => item.split("\0")[0].slice(1));
-        
+
         if (text.includes("encounterType")) {
           m = /[^a-z]/i.test(details[2]) ? details[3] : details[2];
         }
-        
+
         if (!text.includes("senderName") && text.toLowerCase().includes("elite")) {
           l = true;
         }
-        
+
         if (text.includes("|win|")) {
           b = false;
           l = false;
@@ -94,7 +94,7 @@ const nextStep = () => {
             f();
           }
         }
-        
+
         const k = arrayBuffer.find((val, index, arr) => arr[index + 1] === 0x0 && arr[index + 2] === 0x1 && arr[index + 3] === 0x63);
         if (!isNaN(k) && h && text.includes('battleId')) {
           b = true;
@@ -104,7 +104,7 @@ const nextStep = () => {
           new Uint8Array(r)[0x35] = k;
           p = setTimeout(() => y = true, 100);
         }
-        
+
         if (text.includes("battleType") || y) {
           y = false;
           if (!r) return;
